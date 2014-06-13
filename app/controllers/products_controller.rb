@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
+
+
   # The index action
   # This should list all of our products
   # index.html.erb
@@ -8,7 +11,6 @@ class ProductsController < ApplicationController
 
   # This should find a particular product
   def show
-    @product = Product.find(params[:id])
   end
 
   def new
@@ -25,16 +27,19 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update_attributes(product_params)
       redirect_to products_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @product.destroy
+    redirect_to products_path
   end
 
   private
@@ -43,7 +48,11 @@ class ProductsController < ApplicationController
 
   def product_params
     # params[:product]
-    params.require(:product).permit(:name, :price)
+    params.require(:product).permit(:name, :price, :sku)
+  end
+
+  def find_product
+    @product = Product.find(params[:id])
   end
 
 

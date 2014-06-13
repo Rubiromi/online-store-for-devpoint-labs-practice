@@ -8,7 +8,10 @@
       <%= link_to(product.name, product_path(product.id)) %>
       <!-- <a href="/products/<%= product.id %>"> <%= product.name %></a> -->
       <%= number_to_currency(product.price) %>
-      -- <%= link_to('Edit', edit_product_path(product.id)) %>
+      <b>sku: </b> ( <%= link_to(product.sku, product_path(product.id)) %> )
+       <%= link_to('Edit', edit_product_path(product.id)) %>
+       <%= link_to('Delete', product_path(product.id), method: :delete, 'data-confirm' => 'Are you sure to delete this product?') %>
     </li>
+    </br>
   <% end %>
 </ul>

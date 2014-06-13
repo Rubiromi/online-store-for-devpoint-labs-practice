@@ -5,8 +5,19 @@
     <%= f.label(:name) %>
     <%= f.text_field(:name) %>
   </div>
+
   <div>
-    <%= f.submit('Save Product') %>   
+    <%= f.label(:price) %>
+    <%= f.text_field(:price) %>
+  </div>
+
+  <div>
+    <%= f.label(:sku, 'Sku number') %>
+    <%= f.text_field(:sku) %>
+  </div>
+
+  <div>
+    <%= f.submit('Save Product') %>
   </div>
 
 <% end %>
