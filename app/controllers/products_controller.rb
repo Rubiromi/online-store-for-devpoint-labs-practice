@@ -16,16 +16,24 @@ class ProductsController < ApplicationController
   end
 
   def create
-    # raise params[:product].inspect
-    # to see what params look like
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_path
     else
       render :new
-      # saving to the DB faild
-      # do something else
+    end
+  end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      redirect_to products_path
+    else
+      render :edit
     end
   end
 
@@ -35,7 +43,7 @@ class ProductsController < ApplicationController
 
   def product_params
     # params[:product]
-    params.require(:product).permit(:name)
+    params.require(:product).permit(:name, :price)
   end
 
 
