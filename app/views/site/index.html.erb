@@ -1,3 +1,23 @@
-<h1 class='pt'>HOME PAGE ♡</h1>
+<h1 class='pt'>Welcome to DPL store!</h1>
 
 <%= image_tag('office01.jpeg', size: '200xauto') %>
+
+<div id="left-column">
+  <h2>Our Products</h2>
+  <% @products.each do |product| %>
+    <div id="product">
+      <%= product.name %>
+    </div>
+  <% end %>
+</div>
+
+<div id="right-column">
+  <h2>Our Cars</h2>
+  <% @cars.each do |car| %>
+    <div id="car">
+      <%= car.year %> <%= car.make %> <%= car.model %>
+    </div>
+  <% end %>
+</div>
+
+<br clear="all" />
