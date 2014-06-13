@@ -29,8 +29,6 @@ class ProductsController < ApplicationController
     end
   end
 
-
-
   private
   #  define a private method
   #  use strong parameters
