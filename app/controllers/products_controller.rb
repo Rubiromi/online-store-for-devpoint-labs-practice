@@ -20,8 +20,10 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = 'Good job! You did it.'
       redirect_to products_path
     else
+      flash[:alert] = 'Bad job! You failed.'
       render :new
     end
   end

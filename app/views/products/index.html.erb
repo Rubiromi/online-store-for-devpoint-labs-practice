@@ -1,16 +1,17 @@
 <%= link_to('Create a new product', new_product_path) %>
 
-<h1>Products Page</h1>
+<h1>Showing <%= pluralize(@products.count, 'Product') %></h1></br>
 
 <ul>
   <% @products.each do |product| %>
-    <li>
+    <li class="<%= cycle('even', 'odd') %>">
       <%= link_to(product.name, product_path(product.id)) %>
       <!-- <a href="/products/<%= product.id %>"> <%= product.name %></a> -->
       <%= number_to_currency(product.price) %>
       <b>sku: </b> ( <%= link_to(product.sku, product_path(product.id)) %> )
        <%= link_to('Edit', edit_product_path(product.id)) %>
        <%= link_to('Delete', product_path(product.id), method: :delete, 'data-confirm' => 'Are you sure to delete this product?') %>
+       Posted <%= time_ago_in_words(product.created_at) %> ago.
     </li>
     </br>
   <% end %>

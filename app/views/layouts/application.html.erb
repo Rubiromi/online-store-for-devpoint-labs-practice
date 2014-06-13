@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DplStore</title>
+  <title>DPL Store</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+  <div id="wrapper">
+    <header>
+      <nav>
+        <%= link_to('Home Page', root_path) %>
+        <span>&nbsp;|&nbsp;</span>
+        <%= link_to('View Products', products_path) %>
+      </nav>
+    </header>
+
+    <%= show_notice_message %>
+
+    <section id="main-content">
+      <%= yield %>
+    </section>
+
+    <footer>
+      Copyright &copy; <%= Time.now.year %> - Hiromi De Young
+    </footer>
+
+  </div>
 
 </body>
 </html>
