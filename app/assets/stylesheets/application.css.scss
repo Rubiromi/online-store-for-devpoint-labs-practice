@@ -1,23 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-* {
-  margin: 0;
-  padding: 0;
-}
+@import "bootstrap";
 
 body {
   font-family: 'Helvetica neue';
@@ -26,6 +7,8 @@ body {
   background: transparent url('bgblu.jpg') repeat scroll center center;
 }
 
+
+
 .pt {
   margin: 20px;
 }
@@ -33,11 +16,6 @@ body {
 #wrapper {
   width: 980px;
   margin: 0 auto;
-}
-
-header {
-  margin-bottom: 20px;
-  padding: 20px;
 }
 
 .flash-alert {
@@ -95,9 +73,9 @@ ul#products li.odd {
 
 
 footer {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
   padding: 20px;
   border-top: 1px solid #aaaaaa;
-  font-size: 12px;
+  font-size: 14px;
 }

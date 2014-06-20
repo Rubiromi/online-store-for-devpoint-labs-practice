@@ -10,7 +10,7 @@
 <body>
   <div id="wrapper">
     <header>
-      <nav>
+      <nav class="navbar navbar-inverse" role="navigation">
         <%= link_to('Home Page', root_path) %>
         <span>&nbsp;|&nbsp;</span>
         <%= link_to('View Products', products_path) %>
@@ -18,6 +18,8 @@
         <%= link_to('About DPL Store', about_path) %>
         <span>&nbsp;|&nbsp;</span>
         <%= link_to('Create a new product', new_product_path) %>
+        <span>&nbsp;|&nbsp;</span>
+        <%= link_to('Login', new_user_session_path) %>
       </nav>
     </header>
 
