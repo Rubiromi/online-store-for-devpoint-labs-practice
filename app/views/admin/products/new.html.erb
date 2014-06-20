@@ -1,0 +1,23 @@
+<h1>Make a new product</h1>
+
+<%= form_for(@product) do |f| %>
+  <div>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+  </div>
+
+  <div>
+    <%= f.label(:price) %>
+    <%= f.text_field(:price) %>
+  </div>
+
+  <div>
+    <%= f.label(:sku, 'Sku number') %>
+    <%= f.text_field(:sku) %>
+  </div>
+
+  <div>
+    <%= f.submit('Save Product') %>
+  </div>
+
+<% end %>

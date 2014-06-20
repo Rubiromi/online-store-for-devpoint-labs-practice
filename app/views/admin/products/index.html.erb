@@ -6,9 +6,10 @@
       <%= link_to(product.name, product_path(product.id)) %>
       <!-- <a href="/products/<%= product.id %>"> <%= product.name %></a> -->
       <%= number_to_currency(product.price) %>
+      <%= link_to('Edit', edit_admin_product_path(product.id)) %>
 
        Posted <%= time_ago_in_words(product.created_at) %> ago.
     </li>
-    <br />
+    </br>
   <% end %>
 </ul>

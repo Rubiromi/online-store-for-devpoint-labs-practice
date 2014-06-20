@@ -1,23 +1,13 @@
 <h1>Edit <%= @product.name %></h1>
 
-<%= form_for(@product) do |f| %>
+<%= form_for([:admin, @product]) do |f| %>
   <div>
-    <%= f.label(:name, 'Edit product name') %>
+    <%= f.label(:name) %>
     <%= f.text_field(:name) %>
   </div>
 
   <div>
-    <%= f.label(:price, 'Edit product price') %>
-    <%= f.text_field(:price) %>
-  </div>
-
-  <div>
-    <%= f.label(:sku, 'Edit sku number') %>
-    <%= f.text_field(:sku) %>
-  </div>
-
-  <div>
-    <%= f.submit('Update') %>
+    <%= f.submit('Save Product') %>
   </div>
 
   <% end %>
