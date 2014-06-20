@@ -12,7 +12,8 @@ module ApplicationHelper
     # return flash[some_variable] if flash[some_valiable] present?
     unless flash.empty?
       [:notice, :alert].each do |key|
-        return content_tag(:div, flash[key], class: "flash-#{key}") if flash[key].present?
+        return content_tag(:div, flash[key], class: "flash-#{key}")
+        if flash[key].present?
       end
     end
   end
